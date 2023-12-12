@@ -1,5 +1,5 @@
 # aiomes
-[ *Asyncronous Input Output Moscow Electronic School* ]  
+  
 **AIOMES**  - ассинхронная Python-библиотека, написанная на aiohttp и async_playwright, с легким доступом к сервису МЭШ.
 
 ### Примечание:    
@@ -35,4 +35,5 @@ async def main():
     user = await aiomes.Client(token)
 
 asyncio.run(main())
-```
+```  
+ [ *Asyncronous Input Output Moscow Electronic School* ]
