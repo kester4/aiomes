@@ -49,4 +49,25 @@ async def main():
 
 asyncio.run(main())
 ```
+### Получение расписания
+```python
+schedule = await user.get_schedule()
+
+for subject in schedule:
+    print(f"{subject.name}, {subject.start_time} - {subject.end_time}, к. {subject.room_number}; {subject.marks}")
+```
+### Получение короткого расписания
+```python
+short_schedule = await user.get_schedule_short()
+    
+for subject in short_schedule:
+    print(f"{subject.name}, {subject.start_time} - {subject.end_time}")
+```
+### Получение расписания каникул
+```python
+periods_schedule = await user.get_periods_schedule()
+
+for subject in periods_schedule:
+    print(f"{period.name}: {period.starts} — {period.ends}")
+```
  [ *Asyncronous Input Output Moscow Electronic School* ]
