@@ -1,9 +1,9 @@
 # aiomes
   
-**AIOMES**  - ассинхронная Python-библиотека, написанная на aiohttp и async_playwright, с легким доступом к сервису МЭШ.
+**AIOMES**  - ассинхронная Python-библиотека, написанная на aiohttp и async_playwright, с легким доступом к сервису [МЭШ](https://school.mos.ru)
 
 ### Примечание:    
-&nbsp;&nbsp;&nbsp;&nbsp;Библиотека может работать только с профилем ученика.   
+> Библиотека может работать только с профилем ученика.   
 
 
 ### Установка
@@ -14,7 +14,8 @@ pip install aiomes
 playwright install
 ```
 
-### Использование
+
+### Авторизация по логину и паролю
 ```python
 from playwright.async_api import async_playwright
 import asyncio
@@ -35,5 +36,17 @@ async def main():
     user = await aiomes.Client(token)
 
 asyncio.run(main())
-```  
+```
+### Авторизация по токену
+```python
+import asyncio
+import aiomes
+
+TOKEN = ...
+
+async def main():
+  user = await aiomes.Client(token)
+
+asyncio.run(main())
+```
  [ *Asyncronous Input Output Moscow Electronic School* ]
