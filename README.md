@@ -132,7 +132,7 @@ for day in attendance:
 ```
 ### Получение рейтинга в классе
 ```python
-today = date.today
+today = date.today()
 ranking = await user.get_class_rank(date_from=today - timedelta(7), date_to=today)
 
 for day in ranking:
