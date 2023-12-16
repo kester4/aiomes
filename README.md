@@ -61,7 +61,7 @@ import aiomes
 TOKEN = ...
 
 async def main():
-  user = await aiomes.Client(token)
+  user = await aiomes.Client(token=TOKEN)
 
 asyncio.run(main())
 ```  
