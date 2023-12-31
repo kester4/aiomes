@@ -1,4 +1,0 @@
-playwright
-aiohttp
-async-class
-pydantic
