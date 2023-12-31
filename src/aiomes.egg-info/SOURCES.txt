@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/aiomes/__init__.py
+src/aiomes/errors.py
+src/aiomes/main.py
+src/aiomes/output_types.py
+src/aiomes/user_auth.py
+src/aiomes/utils.py
+src/aiomes.egg-info/PKG-INFO
+src/aiomes.egg-info/SOURCES.txt
+src/aiomes.egg-info/dependency_links.txt
+src/aiomes.egg-info/requires.txt
+src/aiomes.egg-info/top_level.txt
