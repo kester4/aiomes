@@ -11,7 +11,7 @@
 pip install aiomes
 ```
 ```bash
-playwright install
+playwright install firefox
 ```
 
 ## Оглавление методов библиотеки:
