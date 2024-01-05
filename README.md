@@ -21,7 +21,7 @@ playwright install
 - [Получение короткого расписания](#получение-короткого-расписания)
 - [Получение каникулярного расписания](#получение-расписания-каникул)
 - [Получение Д/З](#получение-домашнего-задания)
-- [Получение оценок](#получение-оценок-за-дату)
+- [Получение оценок](#получение-оценок)
 - [Получение итоговых оценок](#получение-оценок-за-период)
 - [Получение прошлогодних итоговых оценок](#получение-итог-оценок-за-прошлые-года)
 - [Получение инфо о школе](#получение-информации-о-школе)
@@ -77,6 +77,7 @@ for subject in schedule:
 ```
 ### Получение короткого расписания
 ```python
+today = date.today()
 short_schedule = await user.get_schedule_short([today, today+timedelta(1), ...])
     
 for subject in short_schedule:
@@ -91,21 +92,23 @@ for subject in periods_schedule:
 ```
 ### Получение домашнего задания
 ```python
-homework = await user.get_homeworks()
+homework = await user.get_homeworks(from_date=date.today(), to_date=date.today())
 
 for hw in homework:
+    print(hw.hw_date.strftime('%d/%m'))
     print(f"{hw.subject_name}: {hw.description}; {hw.attached_files}, {hw.attached_tests}")
+    print("-"*15)
 ```
-### Получение оценок за дату
+### Получение оценок
 ```python
-marks = await user.get_marks()
+marks = await user.get_marks(from_date=date.today()-timedelta(7), to_date=date.today())
 
-for mark in marks:
-    print(f"{mark.subject_name}: {mark. value} [{mark.weight}] - {mark.reason}")
+for mark in sorted(marks, key=lambda x: x.mark_date):
+    print(f"{mark.subject_name}: {mark.value} [{mark.weight}] - {mark.reason}")
 ```
 ### Получение оценок за период
 ```python
-period_marks = await user.get_period_marks(period_id=0)  # [Первый период]
+period_marks = await user.get_period_marks(year_id=user.class_level, period_id=0)  # [Текущий класс, первый период]
 
 for per_mark in period_marks:
     print(f"{per_mark.subject_name} - {per_mark.average_mark}; {per_mark.marks}")
