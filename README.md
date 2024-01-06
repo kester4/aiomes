@@ -111,7 +111,7 @@ for mark in sorted(marks, key=lambda x: x.mark_date):
 period_marks = await user.get_period_marks(year_id=user.class_level, period_id=0)  # [Текущий класс, первый период]
 
 for per_mark in period_marks:
-    print(f"{per_mark.subject_name} - {per_mark.average_mark}; {per_mark.marks}")
+    print(f"{per_mark.subject_name} - {per_mark.average_mark}, {per_mark.final_mark}; {per_mark.marks}")
 ```
 ### Получение итог. оценок за прошлые года
 ```python
