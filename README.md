@@ -13,6 +13,9 @@ pip install aiomes
 ```bash
 playwright install firefox
 ```
+```bash
+playwright install-deps
+```
 
 ## Оглавление методов библиотеки:
 - **[Вход по логину / паролю](#авторизация-по-логину-и-паролю)**
